@@ -1,0 +1,123 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h3><b><u>Add New Hospital</u></b></h3>
+    <form method="POST" 
+    action="/listings" 
+    novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title"   class="form-label"><b>Hospital Name</b></label>
+            <input 
+            name="listing[title]" 
+            placeholder="enter title" 
+            type="text" 
+            class="form-control"
+            required/>
+            <div class="valid-feedback">name look's good</div>
+            <div class="invalid-feedback">Please enter hospital name</div>
+    
+    </div>
+        <div class="mb-3">
+            <label for="description" class="form-label"><b>About Hospital</b></label>
+            <textarea 
+                name="listing[description]"
+                class="form-control"
+                required>
+            </textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label"><b>Upload Hospital Image</b></label>
+            <input name="listing[image]"  
+            type="file" 
+            class="form-control" 
+            required />
+            <div class="invalid-feedback">Please Give a valid  hospital Description</div>
+        </div>
+        <div class="row">
+        <span class="mb-3 col-md-4">
+            <label for="low_price" class="form-label"><b>Low Price</b></label>
+            <input name="listing[low_price]" placeholder="enter minimum price" 
+            type="number"
+            class="form-control"
+            required/>
+            <div class="invalid-feedback">Please enter a affordable price</div>
+        </span>
+
+        <span class="mb-3 col-md-4">
+                <label for="high_price" class="form-label"><b>High Price</b></label>
+                <input name="listing[high_price]" placeholder="enter maximum price" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter a affordable price</div>
+        </span> 
+        </div>
+        
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label"><b>Country</b></label>
+            <input name="listing[country]" placeholder="enter country"
+            type="text"
+            class="form-control" 
+            required/>
+            <div class="invalid-feedback">Please enter hospital country</div>
+        </div>
+        
+        
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label"><b>Location</b></label>
+            <input name="listing[location]" 
+            placeholder="enter location" 
+            type="text" 
+            class="form-control"
+            required>
+            <div class="invalid-feedback">Please enter a valid hospital location</div>
+        </div>
+        </div>
+
+        <h2><u>Bed Details</u></h2>
+            <div class="row">
+                <span class="mb-3 col-md-4">
+                    <label for="general_total" class="form-label"><b>General Total Bed</b></label>
+                    <input name="listing[general_total]" placeholder="enter bed" type="number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter General Total Bed</div>
+                </span>
+            
+                <span class="mb-3 col-md-4">
+                    <label for="general_booked" class="form-label"><b>General Booked bed</b></label>
+                    <input name="listing[general_booked]" placeholder="enter bed" type="number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter general Booked Bed</div>
+                </span>
+            </div>
+
+            <div class="row">
+                <span class="mb-3 col-md-4">
+                    <label for="female_total" class="form-label"><b>Female Total Bed</b></label>
+                    <input name="listing[female_total]" placeholder="enter bed" type="number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter Female Total Bed</div>
+                </span>
+            
+                <span class="mb-3 col-md-4">
+                    <label for="female_booked" class="form-label"><b>Female Booked bed</b></label>
+                    <input name="listing[female_booked]" placeholder="enter bed" type="number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter Female Booked Bed</div>
+                </span>
+            </div>
+
+            <div class="row">
+                <span class="mb-3 col-md-4">
+                    <label for="cabin_total" class="form-label"><b>Cabin Total Bed</b></label>
+                    <input name="listing[cabin_total]" placeholder="enter bed" type="number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter Cabin Total Bed</div>
+                </span>
+            
+                <span class="mb-3 col-md-4">
+                    <label for="Cabin_booked" class="form-label"><b>Cabin Booked bed</b></label>
+                    <input name="listing[cabin_booked]" placeholder="enter bed" type="number" class="form-control" required />
+                    <div class="invalid-feedback">Please enter Cabin Booked Bed</div>
+                </span>
+            </div>
+        <button class="btn btn-dark add-btn mt-3">Add</button>
+        <br><br>
+    </form>
+    </div>
+    </div>
+</body>

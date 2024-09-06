@@ -1,0 +1,111 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h3><b><u>Edit Hospital Information</u></b></h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label"><b>Hospital Name</b></label>
+        <input 
+            name="listing[title]" 
+            value="<%= listing.title %>" type="text" class="form-control"
+            required/>
+            <div class="invalid-feedback">hospital name</Title></div> 
+        </div>
+        <div class="mb-3">
+            <label for="description"
+            class="form-label"><b>About Hospital</b></label>
+            <textarea name="listing[description]" class="form-control"
+            required><%= listing.description %> </textarea>
+            <div class="invalid-feedback">Give a Short Description about hospital</Title>
+            </div>
+        </div>
+        <div class="mb-3">
+            <b>Previous Image</b><br>
+            <img src="<%= orginalImageUrl %>" />
+            </div>
+        <div class="mb-3">
+            <label for="image" class="form-label"><b>Upload New Hospital Image</b></label>
+            <input name="listing[image]" type="file" class="form-control" 
+            />
+        </div>
+        <div class="row">
+            <span class="mb-3 col-md-4">
+                <label for="low_price" class="form-label"><b>Low Price</b></label>
+                <input name="listing[low_price]" value="<%= listing.low_price %>" type="number" class="form-control"
+                    required />
+                <div class="invalid-feedback">Please enter a affordable price</div>
+            </span>
+        
+            <span class="mb-3 col-md-4">
+                <label for="high_price" class="form-label"><b>High Price</b></label>
+                <input name="listing[high_price]" value="<%= listing.high_price %>" type="number" class="form-control"
+                    required />
+                <div class="invalid-feedback">Please enter a affordable price</div>
+            </span>
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label"><b>Country</b></label>
+            <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" 
+            required/>
+            <div class="invalid-feedback">Give hospital Country</Title>
+            </div>
+        </div>
+        
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label"><b>Location</b></label>
+            <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control"
+            required/>
+            <div class="invalid-feedback">Give hospital Location here</Title>
+            </div>
+        </div>
+        
+
+        <h2><u>Bed Details</u></h2>
+        <div class="row">
+            <span class="mb-3 col-md-4">
+                <label for="general_total" class="form-label"><b>General Total Bed</b></label>
+                <input name="listing[general_total]" value="<%= listing.general_total %>" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter General Total Bed</div>
+            </span>
+        
+            <span class="mb-3 col-md-4">
+                <label for="general_booked" class="form-label"><b>General Booked bed</b></label>
+                <input name="listing[general_booked]" value="<%= listing.general_booked %>" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter general Booked Bed</div>
+            </span>
+        </div>
+        
+        <div class="row">
+            <span class="mb-3 col-md-4">
+                <label for="female_total" class="form-label"><b>Female Total Bed</b></label>
+                <input name="listing[female_total]" value="<%= listing.female_total %>" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter Female Total Bed</div>
+            </span>
+        
+            <span class="mb-3 col-md-4">
+                <label for="female_booked" class="form-label"><b>Female Booked bed</b></label>
+                <input name="listing[female_booked]" value="<%= listing.female_booked %>" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter Female Booked Bed</div>
+            </span>
+        </div>
+        
+        <div class="row">
+            <span class="mb-3 col-md-4">
+                <label for="cabin_total" class="form-label"><b>Cabin Total Bed</b></label>
+                <input name="listing[cabin_total]" value="<%= listing.cabin_total %>" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter Cabin Total Bed</div>
+            </span>
+        
+            <span class="mb-3 col-md-4">
+                <label for="Cabin_booked" class="form-label"><b>Cabin Booked bed</b></label>
+                <input name="listing[cabin_booked]" value="<%= listing.cabin_booked %>" type="number" class="form-control" required />
+                <div class="invalid-feedback">Please enter Cabin Booked Bed</div>
+            </span>
+        </div>
+        <button class="btn btn-dark edit-btn mt-3">Edit</button>
+        </div>
+    </form>
+    </div>
+    </div>
+</body>
